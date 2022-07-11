@@ -1,0 +1,4 @@
+xsetroot -cursor_name left_ptr
+exec nitrogen --restore &
+exec dwmblocks &
+exec dbus-launch --sh-syntax --exit-with-session dwm
