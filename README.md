@@ -1,4 +1,4 @@
-![Rice](https://user-images.githubusercontent.com/109094729/178319903-d235c544-f73a-465b-941f-b2a440859c5f.png)
+![Rice](https://user-images.githubusercontent.com/109094729/178818701-05627620-0895-4585-9b1f-19b3450035cc.png)
 
 # -- urgellx's ((DOTFILES)) s'xllegru --
 
@@ -8,10 +8,10 @@ computers.
 
 Programs :
 
-DWM
-Dmenu
-Alacritty 
-ncmpcpp
-neofetch
-ranger
-sx
+DWM  
+Dmenu  
+Alacritty   
+ncmpcpp  
+neofetch  
+ranger  
+sx  
