@@ -10,13 +10,13 @@ static const unsigned int gappov    = 30;       /* vert outer gap between window
 static       int smartgaps          = 0;        /* 1 means no outer gap when there is only one window */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
-static const char *fonts[]          = { "monospace:size=10" };
+static const char *fonts[]          = { "terminus:size=10" };
 static const char dmenufont[]       = "monospace:size=10";
-static const char col_gray1[]       = "#212121";
+static const char col_gray1[]       = "#7e2d4d";
 static const char col_gray2[]       = "#586c6a";
-static const char col_gray3[]       = "#cdfffb";
-static const char col_gray4[]       = "#2d3a3a";
-static const char col_cyan[]        = "#a5bbbb";
+static const char col_gray3[]       = "#92a3b0";
+static const char col_gray4[]       = "#ca9784";
+static const char col_cyan[]        = "#6b629e";
 static const unsigned int baralpha = 0xd0;
 static const unsigned int borderalpha = OPAQUE;
 static const char *colors[][3]      = {
@@ -101,6 +101,7 @@ static Key keys[] = {
 	{ MODKEY,                       XK_v,      spawn,          {.v = (const char*[]){ "virt-manager", NULL } } },
 	{ MODKEY,			XK_n,	   spawn,	   {.v = (const char*[]){ TERMINAL, "-e", "ncmpcpp", NULL } } },
 	{ MODKEY,			XK_r,      spawn,          {.v = (const char*[]){ TERMINAL, "-e", "ranger", NULL } } },
+	{ MODKEY,                       XK_i,      spawn,          {.v = (const char*[]){ TERMINAL, "-e", "nvim Documents/Idees", NULL } } },
 	{ MODKEY,                       XK_t,      spawn,          SHCMD("$HOME/Documents/tor-browser_en-US/start-tor-browser") },
 	{ MODKEY,			XK_e,	   spawn,	   SHCMD("$HOME/.local/share/unicode.sh") },
 	{ MODKEY,			XK_Break,  spawn,          {.v = (const char*[]){ "mpc", "toggle", NULL } } },
@@ -108,8 +109,8 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_t,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
-	{ MODKEY,                       XK_i,      incnmaster,     {.i = +1 } },
-	{ MODKEY,                       XK_d,      incnmaster,     {.i = -1 } },
+	{ MODKEY|ShiftMask,                       XK_i,      incnmaster,     {.i = +1 } },
+	{ MODKEY|ShiftMask,                       XK_d,      incnmaster,     {.i = -1 } },
 	{ MODKEY,                       XK_h,      setmfact,       {.f = -0.05} },
 	{ MODKEY,                       XK_l,      setmfact,       {.f = +0.05} },
 	{ MODKEY,                       XK_Return, zoom,           {0} },
@@ -127,8 +128,8 @@ static Key keys[] = {
 	{ MODKEY|Mod4Mask|ShiftMask,    XK_8,      incrohgaps,     {.i = -1 } },
 	{ MODKEY|Mod4Mask,              XK_9,      incrovgaps,     {.i = +1 } },
 	{ MODKEY|Mod4Mask|ShiftMask,    XK_9,      incrovgaps,     {.i = -1 } },
-	{ MODKEY|Mod4Mask,              XK_0,      togglegaps,     {0} },
-	{ MODKEY|Mod4Mask|ShiftMask,    XK_0,      defaultgaps,    {0} },
+	{ MODKEY|ShiftMask,             XK_b,      togglegaps,     {0} },
+	{ MODKEY|Mod4Mask|ShiftMask,    XK_ampersand,      defaultgaps,    {0} },
 	{ MODKEY,                       XK_Tab,    view,           {0} },
 	{ MODKEY|ShiftMask,             XK_c,      killclient,     {0} },
 	{ MODKEY|ShiftMask,             XK_t,      setlayout,      {.v = &layouts[0]} },
