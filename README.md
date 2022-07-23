@@ -1,4 +1,4 @@
-![Rice](https://user-images.githubusercontent.com/109094729/178818701-05627620-0895-4585-9b1f-19b3450035cc.png)
+![Rice](https://user-images.githubusercontent.com/109094729/180614915-e235614d-01ba-47d4-93c5-02cd850586aa.png)
 
 # -- urgellx's ((DOTFILES)) s'xllegru --
 
