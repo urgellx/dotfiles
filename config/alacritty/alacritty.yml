@@ -109,6 +109,7 @@ font:
     #   - (Linux/BSD) monospace
     #   - (Windows) Consolas
     family: FiraCode Nerd Font
+    family: Px437 Apricot 200L-2y 
     # family: CodeNewRoman Nerd Font
     # family: RobotoMono Nerd Font
     # family: Hack
@@ -216,20 +217,20 @@ draw_bold_text_with_bright_colors: true
 colors:
   # Default colors
   primary:
-    background: '#0c0c0c'
-    foreground: '#7e2d4d'
+    background: '#0a0a0a'
+    foreground: '#fafafa'
 
   # Normal colors
   normal:
-    magenta: '#7e2d4d'
+    magenta: '#fafafa'
     cyan:    '#6b629e'
-    yellow: '#7e2d4d'
+    yellow: '#fafafa'
 
   # Bright colors
   bright:
-    magenta: '#7e2d4d'
+    magenta: '#fafafa'
     cyan:    '#6b629e'
-    yellow: '#7e2d4d'
+    yellow: '#fafafa'
 
 # Visual Bell
 #
