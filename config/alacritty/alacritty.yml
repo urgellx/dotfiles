@@ -1,4 +1,6 @@
+import:
 
+  - ~/.config/alacritty/catppuccin/catppuccin-mocha.yml
 # Any items in the `env` entry below will be added as
 # environment variables. Some entries may override variables
 # set by alacritty itself.
@@ -20,7 +22,7 @@ window:
   #  columns: 0
   #  lines: 0
   # Window position (changes require restart)
-  opacity: 0.9
+  opacity: 1
  #
   # Specified in number of pixels.
   # If the position is not set, the window manager will handle the placement.
@@ -108,11 +110,10 @@ font:
     #   - (macOS) Menlo
     #   - (Linux/BSD) monospace
     #   - (Windows) Consolas
-    family: FiraCode Nerd Font
-    family: Px437 Apricot 200L-2y 
+    family: Source Code Pro
     # family: CodeNewRoman Nerd Font
     # family: RobotoMono Nerd Font
-    # family: Hack
+    # family: Source Code Pro
     # family: JetBrains Mono
     # family: UbuntuMono Nerd Font
     # family: Monofur Nerd Font
@@ -128,10 +129,10 @@ font:
     #
     # If the bold family is not specified, it will fall back to the
     # value specified for the normal font.
-    family: Iosevka Nerd Font
+    family: Source Code Pro
     # family: CodeNewRoman Nerd Font
     # family: RobotoMono Nerd Font
-    # family: Hack
+    # family: Source Code Pro
     # family: JetBrains Mono
     # family: UbuntuMono Nerd Font
     # family: Monofur Nerd Font
@@ -147,10 +148,10 @@ font:
     #
     # If the italic family is not specified, it will fall back to the
     # value specified for the normal font.
-    family: Iosevka Nerd Font
+    family: Source Code Pro
     # family: CodeNewRoman Nerd Font
     # family: RobotoMono Nerd Font
-    # family: Hack
+    # family: Source Code Pro
     # family: JetBrains Mono
     # family: UbuntuMono Nerd Font
     # family: Monofuritalic Nerd Font Mono
@@ -166,10 +167,10 @@ font:
     #
     # If the bold italic family is not specified, it will fall back to the
     # value specified for the normal font.
-    family: FiraCode
+    family: Source Code Pro
     # family: CodeNewRoman Nerd Font
     # family: RobotoMono Nerd Font
-    # family: Hack
+    # family: Source Code Pro
     # family: JetBrains Mono
     # family: UbuntuMono Nerd Font
     # family: Monofuritalic Nerd Font Mono
@@ -213,24 +214,6 @@ font:
 
 # If `true`, bold text is drawn using the bright color variants.
 draw_bold_text_with_bright_colors: true
-
-colors:
-  # Default colors
-  primary:
-    background: '#0a0a0a'
-    foreground: '#fafafa'
-
-  # Normal colors
-  normal:
-    magenta: '#fafafa'
-    cyan:    '#6b629e'
-    yellow: '#fafafa'
-
-  # Bright colors
-  bright:
-    magenta: '#fafafa'
-    cyan:    '#6b629e'
-    yellow: '#fafafa'
 
 # Visual Bell
 #

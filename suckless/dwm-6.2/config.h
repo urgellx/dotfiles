@@ -1,10 +1,12 @@
 /* See LICENSE file for copyright and license details. */
 
 /* appearance */
-static const unsigned int borderpx  = 4;        /* border pixel of windows */
-static const unsigned int snap      = 32;       /* snap pixel */
-static const unsigned int systraypinning = 1;   /* 0: sloppy systray follows selected monitor, >0: pin systray to monitor X */
-static const unsigned int systrayspacing = 3;   /* systray spacing */
+
+static const int CORNER_RADIUS = 10;
+static const unsigned int borderpx  = 0;        /* border pixel of windows */
+static const unsigned int snap      = 0;       /* snap pixel */
+static const unsigned int systraypinning = 0;   /* 0: sloppy systray follows selected monitor, >0: pin systray to monitor X */
+static const unsigned int systrayspacing = 2;   /* systray spacing */
 static const int systraypinningfailfirst = 1;   /* 1: if pinning fails, display systray on the first monitor, False: display systray on the last monitor*/
 static const int showsystray        = 1;     /* 0 means no systray */
 static const unsigned int gappih    = 20;       /* horiz inner gap between windows */
@@ -14,27 +16,27 @@ static const unsigned int gappov    = 30;       /* vert outer gap between window
 static       int smartgaps          = 0;        /* 1 means no outer gap when there is only one window */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
-static const char *fonts[]          = { "Ac437 Apricot Mono:size=10" };
-static const char dmenufont[]       = "Ac437 Apricot Mono:size=10";
+static const char *fonts[]          = { "Hack:size=10" };
+static const char dmenufont[]       = "Hack:size=10";
 static const int swallowfloating    = 1;        /* 1 means swallow floating windows by default */
-static const char col_gray1[]       = "#0a0a0a";
-static const char col_gray2[]       = "#7e2d4d";
-static const char col_gray3[]       = "#92a3b0";
-static const char col_gray4[]       = "#ca9784";
-static const char col_cyan[]        = "#6b629e";
+static const char col_gray1[]       = "#1e1e2e";
+static const char col_gray2[]       = "#cdd6f4";
+static const char col_gray3[]       = "#F5C2E7";
+static const char col_gray4[]       = "#1e1e2e";
+static const char col_cyan[]        = "#94E2D5";
 static const unsigned int baralpha = 0xd0;
 static const unsigned int borderalpha = OPAQUE;
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
 	[SchemeNorm] = { col_gray3, col_gray1, col_gray2 },
-	[SchemeSel]  = { col_gray4, col_cyan,  col_cyan  },
+	[SchemeSel]  = { col_cyan, col_gray1,  col_cyan  },
 };
 
 #define TERMINAL "alacritty"
 
 /* Add somewhere in your constants definition section */
 /* tagging */
-static const char *tags[] = { "Esteban", "二", "三", "亖", "五", "六", "七", "八", "九" };
+static const char *tags[] = { "Esteban", "⬤", "⬤", "⬤", "⬤", "⬤", "⬤", "⬤", "⬤" };
 
 static const Rule rules[] = {
 	/* xprop(1):
@@ -44,6 +46,7 @@ static const Rule rules[] = {
        /* class     instance  title           tags mask  isfloating  isterminal  noswallow  monitor */
        { "Gimp",    NULL,     NULL,           0,         0,          0,           0,        -1 },
        { "Firefox", NULL,     NULL,           1 << 8,    0,          0,          -1,        -1 },
+       { "Conky",    NULL,     NULL,           0,         1,          0,           0,        2 },
        { "Alacritty",   NULL, NULL,           0,         0,          1,          -1,        -1 },
        { NULL,      NULL,     "Event Tester", 0,         0,          0,           1,        -1 }, /* xev */
 };
@@ -103,16 +106,17 @@ static Key keys[] = {
 	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
 	{ MODKEY,			XK_b,	   spawn,          {.v = (const char*[]){ "firefox", NULL } } },
 	{ MODKEY,                       XK_g,      spawn,          {.v = (const char*[]){ "gimp", NULL } } },
-	{ MODKEY,                       XK_s,      spawn,          {.v = (const char*[]){ "schildichat-desktop", NULL } } },
+	{ MODKEY,                       XK_s,      spawn,          {.v = (const char*[]){ "proxychains4", "element-desktop", NULL } } },
+	{ MODKEY,                       XK_d,      spawn,          {.v = (const char*[]){ "torsocks", "dino", NULL } } },
 	{ MODKEY,                       XK_a,      spawn,          {.v = (const char*[]){ TERMINAL, "-e", "newsboat", NULL } } },
-	{ MODKEY,                       XK_m,      spawn,          {.v = (const char*[]){ TERMINAL, "-e", "neomutt", NULL } } },
+	{ MODKEY,                       XK_m,      spawn,          {.v = (const char*[]){ "thunderbird", NULL } } },
 	{ MODKEY,                       XK_v,      spawn,          {.v = (const char*[]){ "proxychains4",  "virt-manager", NULL } } },
         { MODKEY,                       XK_k,      spawn,          {.v = (const char*[]){ "keepassxc", NULL } } },
 	{ MODKEY,			XK_n,	   spawn,	   {.v = (const char*[]){ TERMINAL, "-e", "ncmpcpp", NULL } } },
 	{ MODKEY,			XK_r,      spawn,          {.v = (const char*[]){ TERMINAL, "-e", "ranger", NULL } } },
-	{ MODKEY,                       XK_i,      spawn,          {.v = (const char*[]){ TERMINAL, "-e", "nvim $HOME/Documents/Idees", NULL } } },
-	{ MODKEY,                       XK_t,      spawn,          SHCMD("$HOME/Documents/tor-browser_en-US/start-tor-browser") },
 	{ MODKEY,			XK_e,	   spawn,	   SHCMD("$HOME/.local/share/unicode.sh") },
+	{ MODKEY,			XK_i,	spawn,		SHCMD("$(grep -v '^#' ~/.local/share/bookmark | dmenu -i -l 50 | cut -d' ' -f1 | xsel -b -i)") },
+	{ MODKEY|ShiftMask,		XK_i,	   spawn,	   SHCMD("$HOME/.local/share/bookmark.sh") },
 	{ MODKEY,			XK_Break,  spawn,          {.v = (const char*[]){ "mpc", "toggle", NULL } } },
 	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = termcmd } },
 	{ MODKEY|ShiftMask,             XK_t,      togglebar,      {0} },
