@@ -1,4 +1,5 @@
-![Rice](https://user-images.githubusercontent.com/109094729/183740120-8cdf8cf6-dae8-4682-80df-416f40923bf3.png)
+![dotfiles](https://user-images.githubusercontent.com/109094729/205432604-d3d3e673-ed88-43cf-8f1a-1d2cd65a9565.png)
+
 
 
 # -- urgellx's ((DOTFILES)) s'xllegru --
@@ -11,8 +12,8 @@ Programs :
 
 DWM  
 Dmenu  
+DwmBlocks
 Alacritty   
 ncmpcpp  
 neofetch  
-ranger  
-sx  
+ranger
