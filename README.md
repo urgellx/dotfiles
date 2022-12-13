@@ -1,4 +1,4 @@
-![dotfiles](https://user-images.githubusercontent.com/109094729/205432604-d3d3e673-ed88-43cf-8f1a-1d2cd65a9565.png)
+![image](https://user-images.githubusercontent.com/109094729/207423137-6fd29800-a34b-4a46-ba83-d77a47d79b9f.png)
 
 
 
@@ -8,7 +8,7 @@ The configuration that i use for my personal use.
 This will help me install my config faster on new
 computers.
 
-Programs :
+##Programs :
 
 DWM  
 Dmenu  
